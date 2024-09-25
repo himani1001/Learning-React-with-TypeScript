@@ -1,0 +1,11 @@
+.todo-list {
+    list-style-type: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .todo-list.active {
+    background-color: lightblue;
+    font-weight: bold;
+  }
+  
