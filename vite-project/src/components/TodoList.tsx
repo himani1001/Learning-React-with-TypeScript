@@ -6,11 +6,12 @@ import "./TodoList.css"
 interface Props{
     days: string[];
     heading: string;
-
     //we are using these to pass data to our TodoList component
+
+    onSelectItem: (day: string) => void;
 }
 
-function TodoList({days, heading}: Props) {
+function TodoList({days, heading, onSelectItem}: Props) {
 
     //listing items dynamically
     // let days = [
@@ -49,7 +50,10 @@ function TodoList({days, heading}: Props) {
                     key={day} 
                     // onClick={()=> console.log(day, index)}
                     // onClick = {handleClick}
-                    onClick={() => { setSelectedIndex(index)}}
+                    onClick={() => { 
+                        setSelectedIndex(index);
+                        onSelectItem(day);
+                    }}
                     >
                         {day}
                     </li>))}

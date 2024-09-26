@@ -11,9 +11,16 @@ function App(){
     'Saturday',
     'Sunday'
 ]
+
+  const handleSelectItem = (day: string) => {
+    console.log(day);
+  }
+
   return (
   <div>
-    <TodoList days = {days} heading = 'Days'/>
+    <TodoList days = {days} heading = 'Days' onSelectItem={
+      //can write an inline function or separate event handler
+      handleSelectItem}/>
     </div>
   )
 }
