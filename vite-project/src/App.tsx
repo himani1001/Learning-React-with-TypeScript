@@ -1,6 +1,8 @@
 // import TodoList from "./components/TodoList";
 
 import Button from "./components/Button";
+import Alert from "./components/Alert";
+import { useState } from "react";
 
 // import Alert from "./components/Alert";
 
@@ -20,6 +22,8 @@ function App(){
 //     console.log(day);
 //   }
 
+  const [alertVisible, setAlertVisibility] = useState(false);
+
   return (
   <div>
     {/* <TodoList days = {days} heading = 'Days' onSelectItem={
@@ -30,7 +34,8 @@ function App(){
         Hello <span>World!</span>
       </Alert> */}
 
-      <Button color="secondary" onClick={() => console.log('Clicked')}>Log in</Button>
+      { alertVisible && <Alert onClose={() => setAlertVisibility(false)}><strong>Holy guacamole!</strong> You should check in on some of those fields below.</Alert>}
+      <Button color="secondary" onClick={() => setAlertVisibility(true)}>Log in</Button>
     </div>
   )
 }
