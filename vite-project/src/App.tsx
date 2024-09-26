@@ -1,6 +1,8 @@
 // import TodoList from "./components/TodoList";
 
-import Alert from "./components/Alert";
+import Button from "./components/Button";
+
+// import Alert from "./components/Alert";
 
 function App(){ 
 
@@ -24,9 +26,11 @@ function App(){
       //can write an inline function or separate event handler
       handleSelectItem}/> */}
 
-      <Alert>
+      {/* <Alert>
         Hello <span>World!</span>
-      </Alert>
+      </Alert> */}
+
+      <Button color="secondary" onClick={() => console.log('Clicked')}>Log in</Button>
     </div>
   )
 }
